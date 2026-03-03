@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Ejecutivo | Hjalmar Meza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #020617;
+            /* slate-950 */
+            color: #cbd5e1;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* A4 Landscape Ratio (1.414) - Perfect for PDF Print and 1-screen view */
+        .infographic-canvas {
+            width: 100%;
+            max-width: 1400px;
+            aspect-ratio: 16/9;
+            /* Widescreen Dashboard */
+            background: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 100%);
+            border: 1px solid #1e293b;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .title-font {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .glass-box {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            border-radius: 12px;
+        }
+
+        .neon-amber {
+            color: #f59e0b;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        .neon-blue {
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        .border-amber-glow {
+            border-color: rgba(245, 158, 11, 0.3);
+            box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.05);
+        }
+
+        .border-blue-glow {
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.05);
+        }
+
+        .chip {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .chip-comp {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e2e8f0;
+        }
+
+        .chip-apt {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #f59e0b;
+        }
+
+        @media print {
+            body {
+                background: #020617 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .infographic-canvas {
+                border: none;
+                box-shadow: none;
+                aspect-ratio: auto;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-2 md:p-6">
+
+    <div class="infographic-canvas p-6 md:p-8">
+
+        <!-- HEADER TOP -->
+        <header class="flex justify-between items-start mb-6 border-b border-slate-800 pb-4">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter title-font">
+                    HJALMAR <span class="text-amber-500">MEZA CORTEZ</span>
+                </h1>
+                <p class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest mt-1">
+                    Director de Operaciones <span class="text-slate-600 mx-2">|</span> Arquitecto de Innovación IA
+                </p>
+            </div>
+            <div class="glass-box border-amber-glow p-3 max-w-sm text-right">
+                <div class="text-[9px] text-amber-500 font-black uppercase tracking-widest mb-1">Principio Rector</div>
+                <div class="text-xs text-slate-300 italic font-medium">"Lo que funciona NO se toca; lo que puede
+                    optimizarse, lo transformo mediante IA y flujos autónomos."</div>
+            </div>
+        </header>
+
+        <!-- MAIN 3-COLUMN DASHBOARD -->
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 h-full overflow-hidden">
+
+            <!-- COLUMNA 1: LEGADO OPERATIVO (18 AÑOS) -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fas fa-building text-amber-500 text-xl"></i>
+                    <h2 class="text-lg font-black text-white uppercase tracking-widest title-font">18 Años: Legado Telco
+                    </h2>
+                </div>
+
+                <!-- 3 Métricas Críticas -->
+                <div class="glass-box border-amber-glow p-4 flex flex-col gap-4 bg-slate-900/40">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20 shrink-0">
+                            <i class="fas fa-store text-2xl text-amber-500"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-white leading-none">52 Tiendas</div>
+                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">Gestión de
+                                Infraestructura y Rentabilidad Regional</div>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-px bg-slate-800"></div>
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20 shrink-0">
+                            <i class="fas fa-wallet text-2xl text-amber-500"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-white leading-none">110.000 € Ahorro</div>
+                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">Optimización
+                                Dinero y Supresión de Ineficiencias</div>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-px bg-slate-800"></div>
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20 shrink-0">
+                            <i class="fas fa-users text-2xl text-amber-500"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-white leading-none">30 Millones</div>
+                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">Usuarios
+                                Migrados con SLA y Continuidad Garantizada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competencias Liderazgo -->
+                <div class="glass-box p-4 flex-1">
+                    <h3
+                        class="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-3 border-b border-slate-700 pb-2">
+                        Habilidades Directivas</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="chip chip-comp">Dirección de Equipos</span>
+                        <span class="chip chip-comp">Gestión de Crisis</span>
+                        <span class="chip chip-comp">Optimización KPIs</span>
+                        <span class="chip chip-comp">Negociación B2B</span>
+                        <span class="chip chip-apt">Resolución de Conflictos</span>
+                        <span class="chip chip-apt">Visión Estratégica</span>
+                        <span class="chip chip-apt">Toma de Decisiones</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA 2: EL EJE DE TRANSFORMACIÓN -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 mb-1 justify-center">
+                    <i class="fas fa-random text-slate-400 text-xl"></i>
+                    <h2 class="text-lg font-black text-white uppercase tracking-widest title-font">Aptitudes & Evolución
+                    </h2>
+                </div>
+
+                <!-- Evolucion de Certificaciones -->
+                <div
+                    class="glass-box p-5 text-center flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-900/40 h-48">
+                    <i class="fas fa-certificate text-5xl text-slate-800 absolute -right-4 -bottom-4"></i>
+                    <div class="text-5xl font-black text-white mb-2 title-font"><span class="text-amber-500">20+</span>
+                        Oficiales</div>
+                    <div class="text-[10px] text-slate-300 font-bold uppercase tracking-widest mb-3 z-10">Evolución
+                        Continua de Certificaciones</div>
+                    <div class="flex gap-2 justify-center z-10 w-full">
+                        <div
+                            class="bg-blue-600/20 border border-blue-500/30 text-blue-400 px-3 py-1 rounded text-[9px] font-black uppercase">
+                            <i class="fab fa-linkedin"></i> LinkedIn Learning</div>
+                        <div
+                            class="bg-slate-800 border border-slate-600 text-white px-3 py-1 rounded text-[9px] font-black uppercase">
+                            <i class="fab fa-microsoft text-[#f25022]"></i> Microsoft AI</div>
+                    </div>
+                </div>
+
+                <!-- Habilidades Híbridas (El Puente) -->
+                <div
+                    class="glass-box p-4 flex flex-col justify-center flex-1 relative overflow-hidden border-t-2 border-t-amber-500 border-b-2 border-b-blue-500">
+                    <div
+                        class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-800/20 to-transparent pointer-events-none">
+                    </div>
+                    <h3
+                        class="text-[11px] text-white font-black uppercase tracking-widest mb-3 flex items-center gap-2 z-10">
+                        <i class="fas fa-layer-group text-slate-400"></i> Matriz de Competencias
+                    </h3>
+
+                    <div class="space-y-3 z-10">
+                        <div>
+                            <div class="text-[9px] font-bold text-slate-500 mb-1 uppercase tracking-widest">Saber Hacer
+                                (Hard Skills)</div>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="chip chip-comp">Análisis Financiero</span>
+                                <span class="chip chip-comp">Gestión Operaciones</span>
+                                <span class="chip chip-comp">Ingeniería de Prompts</span>
+                                <span class="chip chip-comp">Modelos LLM</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                class="text-[9px] font-bold text-slate-500 mb-1 uppercase tracking-widest text-amber-500">
+                                Potencial (Soft Skills)</div>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="chip chip-apt">Innovación Disruptiva</span>
+                                <span class="chip chip-apt">Adaptabilidad Tech</span>
+                                <span class="chip chip-apt">Liderazgo Exponencial</span>
+                                <span class="chip chip-apt">Mentalidad Ágil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COLUMNA 3: LA NUEVA ERA TECH (IA) -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 mb-1 text-right justify-end">
+                    <h2 class="text-lg font-black text-white uppercase tracking-widest title-font">Nueva Era: Tecnología
+                    </h2>
+                    <i class="fas fa-microchip text-[#38bdf8] text-xl"></i>
+                </div>
+
+                <!-- Metrica IA -->
+                <div class="glass-box border-blue-glow p-4 flex flex-col justify-center bg-slate-900/40">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#38bdf8]/10 flex items-center justify-center border border-[#38bdf8]/30 shrink-0">
+                            <i class="fas fa-robot text-2xl text-[#38bdf8]"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-[#38bdf8] leading-none neon-blue">+20% Pdtva.</div>
+                            <div class="text-[10px] text-slate-300 font-bold uppercase tracking-wider mt-1">Despliegue
+                                de IA Generativa Empresarial</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portafolio de Innovación (Categorías) -->
+                <div class="glass-box border-blue-glow p-4 flex-1 flex flex-col bg-[#0a1120]/40">
+                    <h3
+                        class="text-[10px] text-[#38bdf8] font-black uppercase tracking-widest mb-3 border-b border-slate-700 pb-2">
+                        Portafolio de Innovación Tecnológica</h3>
+
+                    <div class="flex flex-col gap-2.5 flex-1 justify-around">
+
+                        <div class="flex gap-3 items-start">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center border border-slate-600 shrink-0 text-[#38bdf8]">
+                                <i class="fas fa-brain text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-white uppercase tracking-wide">Sistemas
+                                    Semánticos & LLM</div>
+                                <div class="text-[9px] text-slate-400">Procesadores lógicos y asistentes cognitivos para
+                                    empresas.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 items-start">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center border border-slate-600 shrink-0 text-[#38bdf8]">
+                                <i class="fas fa-hand-paper text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-white uppercase tracking-wide">Teleoperación
+                                    Gestual HMI</div>
+                                <div class="text-[9px] text-slate-400">Interfaces de control físico sin contacto
+                                    mediante visión computacional.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 items-start">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center border border-slate-600 shrink-0 text-[#38bdf8]">
+                                <i class="fas fa-heartbeat text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-white uppercase tracking-wide">Salud &
+                                    Accesibilidad Digital</div>
+                                <div class="text-[9px] text-slate-400">Inclusión digital e interfaces cognitivas
+                                    predictivas.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 items-start">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center border border-slate-600 shrink-0 text-[#38bdf8]">
+                                <i class="fas fa-radar text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-white uppercase tracking-wide">Auditoría
+                                    Perimetral</div>
+                                <div class="text-[9px] text-slate-400">Validación de accesos WiFi y orquestación de
+                                    transmisión.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
