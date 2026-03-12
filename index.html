@@ -98,11 +98,20 @@
       header h1 { color: #000000 !important; font-size: 24pt !important; margin-bottom: 0 !important; }
       header p { color: #1e293b !important; font-size: 11pt !important; line-height: 1.2 !important; font-weight: 500 !important; }
 
-      /* Ajuste de Foto en Print */
+      /* Ajuste de Foto en Print - Sin empujar contenido */
       .print-photo-container {
-        width: 38mm !important;
-        height: 38mm !important;
+        width: 40mm !important;
+        height: 40mm !important;
         border-width: 3px !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 5mm !important;
+        z-index: 50 !important;
+      }
+
+      header {
+        position: relative !important;
+        min-height: 42mm !important; /* Asegurar espacio para el texto sin que la foto lo estire más */
       }
 
       /* Dashboard de Estadísticas */
