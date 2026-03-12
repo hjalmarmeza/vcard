@@ -11,9 +11,19 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
         rel="stylesheet">
     <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #b45309;
+            --slate-950: #020617;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-400: #94a3b8;
+            --text-main: #cbd5e1;
+        }
+
         body {
-            background-color: #030712;
-            color: #cbd5e1;
+            background-color: var(--slate-950);
+            color: var(--text-main);
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
@@ -21,124 +31,129 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: radial-gradient(circle at top right, rgba(245, 158, 11, 0.05), transparent 40%),
-                radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.05), transparent 40%);
         }
 
-        .a4-document {
-            width: 100%;
-            max-width: 850px;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
-            overflow: hidden;
-            position: relative;
+        /* DISEÑO DE PANTALLA (WEB) */
+        @media screen {
+            body {
+                background-image: radial-gradient(circle at top right, rgba(245, 158, 11, 0.05), transparent 40%),
+                                radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.05), transparent 40%);
+                padding: 2rem 1rem;
+            }
+
+            .a4-document {
+                width: 100%;
+                max-width: 850px;
+                background: rgba(15, 23, 42, 0.7);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 24px;
+                box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
+                padding: 4rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .neon-highlight {
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                background: rgba(245, 158, 11, 0.1);
+                filter: blur(120px);
+                top: -150px;
+                right: -150px;
+                border-radius: 50%;
+                pointer-events: none;
+            }
         }
 
-        .serif-font {
-            font-family: 'Playfair Display', serif;
-        }
+        .serif-font { font-family: 'Playfair Display', serif; }
 
         p {
             line-height: 1.8;
             margin-bottom: 1.5rem;
             text-align: justify;
-            color: #94a3b8;
+            font-size: 1.05rem;
         }
 
-        strong {
-            color: #e2e8f0;
-            font-weight: 600;
-        }
-
-        .neon-highlight {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(245, 158, 11, 0.2);
-            filter: blur(100px);
-            top: -100px;
-            right: -100px;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .signature-block {
-            border-top: 1px solid rgba(245, 158, 11, 0.2);
-            padding-top: 2rem;
-            margin-top: 2rem;
-        }
-
-        /* OPTIMIZACIÓN PARA IMPRESIÓN (PDF) */
+        header h1 { letter-spacing: 0.15em; }
+        
+        /* OPTIMIZACIÓN ABSOLUTA PARA PDF / IMPRESIÓN */
         @media print {
-            body {
+            @page {
+                size: A4;
+                margin: 15mm 20mm;
+            }
+
+            body, html {
                 background: white !important;
-                color: #0f172a !important;
+                background-color: white !important;
+                background-image: none !important;
+                color: #000000 !important;
+                display: block !important;
                 padding: 0 !important;
                 margin: 0 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
             }
 
             .a4-document {
                 background: white !important;
-                color: #0f172a !important;
+                background-color: white !important;
+                color: #000000 !important;
                 border: none !important;
                 box-shadow: none !important;
                 border-radius: 0 !important;
+                width: 100% !important;
                 max-width: 100% !important;
-                padding: 15mm 20mm !important; /* Márgenes estándar de carta */
+                padding: 0 !important;
+                margin: 0 !important;
+                display: block !important;
                 backdrop-filter: none !important;
             }
 
-            p {
-                color: #1e293b !important;
-                font-size: 11pt !important;
-                line-height: 1.6 !important;
-                text-align: justify !important;
+            header {
+                border-bottom: 3px solid #f59e0b !important;
+                margin-bottom: 30px !important;
+                padding-bottom: 20px !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
             }
 
-            h1 { color: #000000 !important; }
-            h2 { color: #475569 !important; }
+            h1 { color: #000000 !important; margin: 0 !important; font-size: 26pt !important; }
+            h2 { color: #475569 !important; font-size: 10pt !important; }
             
-            strong, .text-white, .serif-font {
+            p {
                 color: #000000 !important;
-                font-weight: 700 !important;
+                font-size: 10.5pt !important;
+                line-height: 1.5 !important;
+                margin-bottom: 12pt !important;
             }
 
             .text-amber-500 {
-                color: #854d0e !important; /* Ámbar oscuro para impresión */
+                color: #92400e !important; /* Ámbar oscuro legible */
                 font-weight: 700 !important;
             }
 
             .text-slate-400, .text-slate-500 {
                 color: #334155 !important;
-            }
-
-            .neon-highlight {
-                display: none !important;
+                font-size: 9pt !important;
             }
 
             .signature-block {
-                border-top: 1px solid #cbd5e1 !important;
-                margin-top: 10mm !important;
+                border-top: 1px solid #e2e8f0 !important;
+                margin-top: 30px !important;
+                padding-top: 20px !important;
             }
 
-            .no-print {
+            .no-print, .neon-highlight {
                 display: none !important;
             }
 
-            header {
-                border-bottom: 2px solid #f59e0b !important;
-                margin-bottom: 12mm !important;
-            }
+            i { color: #f59e0b !important; }
 
-            /* Forzar que quepa en una sola hoja A4 */
-            @page {
-                size: A4;
-                margin: 0;
+            /* Evitar saltos de página a mitad de párrafos */
+            p, h1, h2, .signature-block {
+                break-inside: avoid;
             }
         }
     </style>
