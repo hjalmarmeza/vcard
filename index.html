@@ -256,6 +256,49 @@
       h2, h3, span { letter-spacing: normal !important; }
       .truncate { overflow: visible !important; text-overflow: clip !important; white-space: normal !important; }
 
+      /* Estilos para bloques de Sidebar en Print */
+      .print-sidebar-block {
+        break-inside: avoid !important;
+        margin-bottom: 20px !important;
+      }
+      .print-sidebar-title {
+        font-size: 10pt !important;
+        color: #0f172a !important;
+        font-weight: 800 !important;
+        border-bottom: 1.5px solid #f59e0b !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding-bottom: 3px !important;
+        margin-bottom: 10px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+      }
+      .print-cert-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 6px !important;
+      }
+      .print-cert-item {
+        border: 1px solid #e2e8f0 !important;
+        padding: 5px !important;
+        background: #f8fafc !important;
+        border-radius: 4px !important;
+        break-inside: avoid !important;
+      }
+      .print-cert-item h4 {
+        font-size: 7.5pt !important;
+        font-weight: 800 !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        line-height: 1.1 !important;
+      }
+      .print-cert-item p {
+        font-size: 6.5pt !important;
+        color: #475569 !important;
+        margin: 2px 0 0 0 !important;
+      }
+
       /* Footer */
       .print-footer { position: fixed; bottom: 0; width: 100%; font-size: 7pt; color: #64748b; text-align: center; }
     }
@@ -705,6 +748,10 @@
                         <p>Microsoft / LinkedIn</p>
                       </div>
                       <div className="print-cert-item">
+                        <h4>Productividad IA</h4>
+                        <p>Microsoft / LinkedIn</p>
+                      </div>
+                      <div className="print-cert-item">
                         <h4>Azure AI Studio</h4>
                         <p>Microsoft</p>
                       </div>
@@ -717,7 +764,7 @@
                         <p>LinkedIn (UE)</p>
                       </div>
                       <div className="print-cert-item">
-                        <h4>Design Thinking</h4>
+                        <h4>Agile & Design Thinking</h4>
                         <p>LinkedIn</p>
                       </div>
                    </div>
