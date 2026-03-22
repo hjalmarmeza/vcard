@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hjalmar Meza Cortez - Senior Executive Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #020617;
+            --brand-slate: #0f172a;
+            --brand-gold: #f59e0b;
+            --brand-accent: #3b82f6;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Estilos de Impresión */
+        @media print {
+            body { background-color: white !important; }
+            .no-print { display: none !important; }
+            .cv-container { 
+                box-shadow: none !important; 
+                margin: 0 !important; 
+                width: 100% !important;
+                max-width: none !important;
+            }
+            .sidebar { background-color: #020617 !important; -webkit-print-color-adjust: exact; }
+            .page-break { page-break-before: always; }
+            .project-card { border: 1px solid #e2e8f0 !important; }
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            display: flex;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            min-height: 29.7cm; /* Proporción A4 aproximada */
+        }
+
+        .sidebar {
+            width: 320px;
+            background-color: var(--brand-dark);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 3rem;
+            background-color: white;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--brand-gold);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.5rem;
+        }
+
+        .stat-badge {
+            background: #1e293b;
+            border-left: 3px solid var(--brand-gold);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .skill-chip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--brand-gold);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .experience-border {
+            border-left: 2px solid #e2e8f0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-dot {
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: var(--brand-gold);
+            border-radius: 50%;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- BARRA LATERAL (SIDEBAR) -->
+        <aside class="sidebar">
+            <div class="text-center mb-10">
+                <div class="w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-200 p-1">
+                    <div class="w-full h-full bg-slate-900 rounded-2xl flex items-center justify-center overflow-hidden">
+                        <!-- Icono o Foto -->
+                        <span class="text-3xl font-bold text-amber-500">HM</span>
+                    </div>
+                </div>
+                <h1 class="text-2xl font-extrabold tracking-tight">HJALMAR MEZA</h1>
+                <p class="text-amber-500 font-semibold text-xs uppercase tracking-widest mt-2">Executive Profile</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- CONTACTO -->
+                <section>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Contacto</h3>
+                    <div class="space-y-3 text-sm text-slate-300">
+                        <p class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            hjalmar.meza@gmail.com
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            +34 634 655522
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Salamanca, España
+                        </p>
+                    </div>
+                </section>
+
+                <!-- HERRAMIENTAS IA -->
+                <section>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Ecosistema IA</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">Claude / Gemini</span>
+                        <span class="skill-chip">ChatGPT Ent.</span>
+                        <span class="skill-chip">Make.com</span>
+                        <span class="skill-chip">Azure AI</span>
+                        <span class="skill-chip">Notion AI</span>
+                        <span class="skill-chip">Prompt Eng.</span>
+                    </div>
+                </section>
+
+                <!-- CERTIFICACIONES CLAVE -->
+                <section>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Top Certs</h3>
+                    <ul class="text-[11px] space-y-2 text-slate-400">
+                        <li><b class="text-slate-200">IA Generativa</b> (Microsoft)</li>
+                        <li><b class="text-slate-200">Productividad IA</b> (Microsoft)</li>
+                        <li><b class="text-slate-200">CX Strategy</b> (LinkedIn)</li>
+                        <li><b class="text-slate-200">Experto RGPD</b> (UE)</li>
+                        <li><b class="text-slate-200">Agile Management</b></li>
+                    </ul>
+                </section>
+
+                <!-- IDIOMAS -->
+                <section>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Idiomas</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between items-center">
+                            <span>Español</span>
+                            <span class="text-amber-500 font-bold text-xs">Nativo</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Inglés</span>
+                            <span class="text-slate-400 text-xs">A2 / Técnico</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <!-- HEADER -->
+            <header class="mb-10">
+                <p class="text-amber-500 font-bold text-sm tracking-widest mb-1">SENIOR OPERATIONS LEADER</p>
+                <h2 class="text-4xl font-black text-slate-900 leading-none mb-6">TRANSFORMACIÓN DIGITAL & IA</h2>
+                <p class="text-slate-600 leading-relaxed italic border-l-4 border-amber-500 pl-4">
+                    "Lo que funciona, NO se toca; pero lo que puede optimizarse, lo transformo mediante flujos de trabajo autónomos y soluciones de IA que generan valor inmediato."
+                </p>
+            </header>
+
+            <!-- MÉTRICAS -->
+            <div class="grid grid-cols-4 gap-4 mb-12">
+                <div class="stat-badge">
+                    <p class="text-[10px] uppercase font-bold text-slate-400">Trayectoria</p>
+                    <p class="text-xl font-black text-white">18 Años</p>
+                </div>
+                <div class="stat-badge">
+                    <p class="text-[10px] uppercase font-bold text-slate-400">Impacto</p>
+                    <p class="text-xl font-black text-white">30M+</p>
+                </div>
+                <div class="stat-badge">
+                    <p class="text-[10px] uppercase font-bold text-slate-400">Ahorro Efic.</p>
+                    <p class="text-xl font-black text-white">110K €</p>
+                </div>
+                <div class="stat-badge">
+                    <p class="text-[10px] uppercase font-bold text-slate-400">Infraestr.</p>
+                    <p class="text-xl font-black text-white">52 Sedes</p>
+                </div>
+            </div>
+
+            <!-- EXPERIENCIA -->
+            <section class="mb-12">
+                <h3 class="section-title">Experiencia Profesional</h3>
+                
+                <div class="space-y-8">
+                    <div class="experience-border">
+                        <div class="experience-dot"></div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-extrabold text-slate-900">Consultor IA & Director de Negocio</h4>
+                            <span class="text-xs font-bold text-slate-400">2021 — Actualidad</span>
+                        </div>
+                        <p class="text-sm text-amber-600 font-bold mb-2">Advisory | España</p>
+                        <ul class="text-sm text-slate-600 space-y-1 list-disc ml-4">
+                            <li>Liderazgo en la implementación de arquitecturas de IA (LLMs) para optimizar procesos operativos.</li>
+                            <li>Obtención de más de 50 certificaciones globales en IA, Cloud y CX para liderar el cambio tecnológico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-border">
+                        <div class="experience-dot"></div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-extrabold text-slate-900">Supervisor de Control de Calidad</h4>
+                            <span class="text-xs font-bold text-slate-400">2017 — 2021</span>
+                        </div>
+                        <p class="text-sm text-amber-600 font-bold mb-2">Telefónica | Lima, Perú</p>
+                        <ul class="text-sm text-slate-600 space-y-1 list-disc ml-4">
+                            <li>Gestión técnica de la migración de 30 millones de clientes, garantizando estabilidad operativa absoluta.</li>
+                            <li>Gestión de la fase 'Marcha Blanca' para productos fijos and móviles previo a liberación masiva.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-border">
+                        <div class="experience-dot"></div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-extrabold text-slate-900">Supervisor Regional (Norte, Centro, Oriente)</h4>
+                            <span class="text-xs font-bold text-slate-400">2009 — 2017</span>
+                        </div>
+                        <p class="text-sm text-amber-600 font-bold mb-2">Telefónica | Lima, Perú</p>
+                        <ul class="text-sm text-slate-600 space-y-1 list-disc ml-4">
+                            <li>Dirección de 52 Centros de Atención gestionando aproximadamente 600k clientes mensuales.</li>
+                            <li>Ahorro auditado de 110.000 € mediante la remodelación y modernización estratégica de infraestructura.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PORTAFOLIO TECNOLÓGICO -->
+            <section class="page-break pt-8">
+                <h3 class="section-title">Portafolio de Innovación Tecnológica</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <h5 class="font-bold text-xs text-slate-900 uppercase">Logística & Entregas</h5>
+                        </div>
+                        <p class="text-[11px] text-slate-500 leading-tight"><b>Alacena:</b> Arquitectura serverless en Firebase con gestión de reglas nocturnas en tiempo real.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                            <h5 class="font-bold text-xs text-slate-900 uppercase">Minería de Datos</h5>
+                        </div>
+                        <p class="text-[11px] text-slate-500 leading-tight"><b>OptiCompra & Scripto:</b> Agentes OCR y extracción de datos con sistemas autónomos Text-to-Image.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            <h5 class="font-bold text-xs text-slate-900 uppercase">Telemetría GEO</h5>
+                        </div>
+                        <p class="text-[11px] text-slate-500 leading-tight"><b>Alerta Vecinal:</b> Web App Progresiva con radares geolocalizados para prevención comunitaria.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                            <h5 class="font-bold text-xs text-slate-900 uppercase">Voz & Comunicación</h5>
+                        </div>
+                        <p class="text-[11px] text-slate-500 leading-tight"><b>VoxMind AI:</b> Dictado asincrónico para automatizar mapas mentales y resúmenes de gestión.</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-amber-50 rounded border-l-4 border-amber-500">
+                    <p class="text-[11px] text-amber-800"><b>Impacto:</b> Más de 20 proyectos desarrollados bajo arquitecturas diversificadas (Nube, Local y Motores de IA).</p>
+                </div>
+            </section>
+
+            <!-- FORMACIÓN -->
+            <section class="mt-12">
+                <h3 class="section-title">Formación Académica</h3>
+                <div class="flex gap-10">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Grado en Administración</h4>
+                        <p class="text-xs text-slate-500">Universidad César Vallejo | 2011 - 2014</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Coaching Directivo</h4>
+                        <p class="text-xs text-slate-500">CENTRUM PUCP</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- BOTONES DE ACCIÓN (NO SE IMPRIMEN) -->
+    <div class="no-print fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-4">
+        <button onclick="window.print()" class="bg-slate-900 text-white px-8 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-all flex items-center gap-2 border border-slate-700">
+            <span>🖨️</span> Generar PDF Ejecutivo
+        </button>
+    </div>
+
+</body>
+</html>

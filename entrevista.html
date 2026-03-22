@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Preparación | Hjalmar Meza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #f5a623;
+            --primary-glow: rgba(245, 166, 35, 0.4);
+            --bg: #0a0a0b;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #50e3c2;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 40vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), var(--bg)), url('landing_entrevista_hero.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-title { z-index: 2; }
+        .hero-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: -2rem auto 4rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            border-left: 5px solid var(--primary);
+            padding-left: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title.advanced {
+            color: var(--accent);
+            border-color: var(--accent);
+            margin-top: 6rem;
+        }
+
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px var(--primary-glow);
+        }
+
+        .card.advanced-card:hover { border-color: var(--accent); box-shadow: 0 10px 40px rgba(80, 227, 194, 0.2); }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1.3;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .card-content {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--text);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .highlight { color: var(--primary); font-weight: 600; }
+        .highlight-accent { color: var(--accent); font-weight: 600; }
+
+        .tips-section {
+            margin-top: 6rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 30px;
+            padding: 4rem;
+            border: 1px solid var(--border);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-box h4 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.2rem;}
+        .tip-box p { font-size: 0.95rem; color: var(--text-muted); }
+
+        footer { text-align: center; padding: 6rem; color: #444; letter-spacing: 2px; }
+
+        @media (max-width: 768px) {
+            .hero-title h1 { font-size: 2.5rem; }
+            .questions-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-title">
+            <h1>Hjalmar Meza Cortez</h1>
+            <p style="color:var(--text-muted); text-transform:uppercase; letter-spacing:4px; margin-top:10px;">Excelencia en Operaciones & IA</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- SECCIÓN 1: CORE -->
+        <h2 class="section-title">Preguntas Fundamentales</h2>
+        <div class="questions-grid">
+            
+            <div class="card">
+                <h3>¿Podrías contarnos un poco sobre ti?</h3>
+                <div class="card-content">"He dedicado mi carrera a asegurar la calidad y estabilidad operativa en entornos corporativos de gran escala, buscando siempre el equilibrio entre el orden y la innovación. Con 18 años de trayectoria, mi enfoque se ha centrado en garantizar que los procesos críticos operen de manera impecable para impactar positivamente en los resultados de la compañía. Actualmente, he fusionado esa sólida base de gestión con una especialización estratégica en <span class="highlight">Inteligencia Artificial y Transformación Digital</span>, lo que me permite aportar a la compañía una visión que une la experiencia de supervisión ejecutiva con las soluciones tecnológicas de vanguardia para maximizar la rentabilidad operativa."</div>
+            </div>
+
+            <div class="card">
+                <h3>¿Cuál consideras que es tu mayor debilidad profesional?</h3>
+                <div class="card-content">"A lo largo de mi trayectoria, mi principal debilidad ha sido un compromiso muy alto con el detalle técnico, lo que en ocasiones me llevaba a un exceso de análisis antes de tomar una decisión importante. He aprendido a equilibrar este rasgo enfocándome más en la <span class="highlight">operatividad y en el impacto directo en el negocio</span>, asegurando que el rigor técnico no detenga la agilidad que el mercado exige hoy. Utilizo esta minuciosidad como una herramienta para garantizar la calidad final, pero siempre bajo una visión pragmática y orientada a resultados medibles."</div>
+            </div>
+
+            <div class="card">
+                <h3>¿Por qué dejaste tu anterior trabajo en Telefónica?</h3>
+                <div class="card-content">"Tras completar un ciclo de 18 años de trayectoria en Telefónica, tomé la decisión estratégica de cerrar mi etapa en la compañía al <span class="highlight">acogerme a un programa de retiro voluntario</span> por una propuesta económica atractiva que me convenía tomar en ese momento. Esta decisión me permitió asumir de inmediato la dirección y administración de mi negocio familiar, dándome la libertad de liderar operaciones propias y, en paralelo, especializarme en la implementación de IA Aplicada para escalar la rentabilidad de mi empresa y la de otros clientes."</div>
+            </div>
+
+            <div class="card">
+                <h3>Cuéntanos sobre algún conflicto en el trabajo y cómo lo resolviste.</h3>
+                <div class="card-content">"Durante el proyecto de remodelación integral de los <span class="highlight">52 Centros de Atención</span> nacional, surgió un conflicto entre los objetivos de ahorro presupuestario de la central y las necesidades operativas de <span class="highlight">600.000 clientes mensuales</span>. Mi función fue coordinar entre las regiones y el área de finanzas para proponer una ejecución por fases técnicas. Esto nos permitió optimizar los recursos logrando un <span class="highlight">ahorro de 110.000 €</span> sin interrumpir la atención al público. Aprendí que el éxito depende de la negociación basada en la eficiencia operativa."</div>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN 2: AVANZADO -->
+        <h2 class="section-title advanced">Nivel Estratégico & Liderazgo</h2>
+        <div class="questions-grid">
+            
+            <div class="card advanced-card">
+                <h3>¿Por qué quieres trabajar con nosotros y no en otra empresa del sector?</h3>
+                <div class="card-content"><span class="highlight-accent">[Campo de Respuesta Estratégica]</span>: Se definirá mediante la investigación previa de la empresa objetivo, alineando tu visión de transformación digital con los retos actuales de su industria específica.</div>
+            </div>
+
+            <div class="card advanced-card">
+                <h3>Cuéntanos sobre una vez que fallaste o un aprendizaje proactivo.</h3>
+                <div class="card-content">"Durante el proyecto de remodelación de los centros de atención, observé que en otras zonas —ajenas a mi responsabilidad— se estaban cometiendo fallos críticos en el diseño de flujos y ejecución que afectaban al cliente. <span class="highlight-accent">Mi aprendizaje fue anticipar esos mismos errores antes de que llegaran a mi red de 52 tiendas.</span> Realicé ajustes proactivos en la coordinación con proveedores y en los planos técnicos según mis necesidades operativas. Esto evitó retrasos y sobrecostos en mi zona, enseñándome que observar los fallos del entorno es vital para blindar el éxito propio."</div>
+            </div>
+
+            <div class="card advanced-card">
+                <h3>¿Cómo gestionas a un miembro de tu equipo que no rinde lo esperado?</h3>
+                <div class="card-content">"Mi enfoque se basa en un <span class="highlight-accent">feedback mensual estructurado</span> donde revisamos los métodos actuales, los resultados logrados y los compromisos a futuro. No me limito a señalar el error; busco entender si la causa es por falta de capacitación o de motivación para aplicar soluciones específicas de acompañamiento o mentoring. Creo que la claridad absoluta en las expectativas es la base del compromiso; cuando un colaborador sabe exactamente cómo se mide su éxito, suele recuperar su nivel de aporte al equipo."</div>
+            </div>
+
+            <div class="card advanced-card">
+                <h3>¿Qué preguntas tienes para nosotros al cerrar la entrevista?</h3>
+                <div class="card-content">
+                    <ul style="padding-left:1.5rem">
+                        <li>"¿Cuál es el desafío más urgente que tendrá este puesto en sus primeros 100 días?"</li>
+                        <br>
+                        <li>"¿Cómo definen el éxito para este rol al final del primer año?"</li>
+                        <br>
+                        <li>"¿Qué enfoque estratégico tiene la compañía hoy sobre la automatización e implementación de soluciones con <span class="highlight-accent">Inteligencia Artificial</span>?"</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tips-section">
+            <h2 style="margin-bottom:3rem; text-align:center; color:var(--primary)">Protocolo de Éxito Ejecutor</h2>
+            <div class="tips-grid">
+                <div class="tip-box">
+                    <h4>Pausas de Poder</h4>
+                    <p>Tras mencionar cifras (110k, 600k), haz silencio por 2 segundos. Proyecta confianza en tus números.</p>
+                </div>
+                <div class="tip-box">
+                    <h4>Delegación</h4>
+                    <p>Muestra orgullo al hablar de tus coordinadores. Demuestra que eres un líder que genera nuevos líderes.</p>
+                </div>
+                <div class="tip-box">
+                    <h4>Contacto Visual</h4>
+                    <p>Inquebrantable al hablar de debilidades. Proyecta una madurez que no tiene miedo a la automejora.</p>
+                </div>
+                <div class="tip-box">
+                    <h4>Fluidez</h4>
+                    <p>Usa esto como conceptos raíz y fluye con el tono del entrevistador. No recites, conversa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Hjalmar Meza Cortez &copy; 2026 | Excelencia en Gestión</footer>
+
+</body>
+</html>
