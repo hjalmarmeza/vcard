@@ -127,9 +127,20 @@
             pointer-events: none;
         }
 
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
     </style>
 </head>
 <body>
+    <canvas id="bg-canvas"></canvas>
 
     <div class="phone-card">
         <div class="glow"></div>
@@ -180,6 +191,65 @@ END:VCARD`;
             URL.revokeObjectURL(url);
         }
     </script>
+    <script>
+        // --- Red de Partículas Ejecutivas ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
 
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            const numParticles = Math.min(Math.floor(width * height / 18000), 50); // Número controlado de nodos
+            for (let i = 0; i < numParticles; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    radius: Math.random() * 1.5 + 0.5
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = 'rgba(245, 166, 35, 0.4)'; // Color primario tenue
+            ctx.lineWidth = 0.5;
+
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // Rebotar en los bordes suavemente
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Conectar nodos cercanos
+                for (let j = i + 1; j < particles.length; j++) {
+                    let p2 = particles[j];
+                    let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 120) {
+                        ctx.strokeStyle = `rgba(245, 166, 35, ${0.15 - dist/120 * 0.15})`; 
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
 </body>
 </html>
