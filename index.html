@@ -153,7 +153,7 @@
 
         <div class="actions">
             <!-- Botón para descargar el contacto físico -->
-            <a href="hjalmar_meza.vcf" class="btn primary" download="Hjalmar_Meza.vcf">
+            <a href="#" class="btn primary" onclick="generateAndDownloadVCard(); return false;">
                 <i class="fas fa-user-plus"></i> Guardar contacto
             </a>
 
@@ -172,22 +172,30 @@
     </div>
 
     <script>
-        function downloadVCard() {
-            const vcardData = `BEGIN:VCARD
-VERSION:3.0
-FN:Hjalmar Meza Cortez
-TITLE:Líder de Operaciones & Transformación Digital
-ORG:Hjalmar Meza Consulting
-URL:https://www.linkedin.com/in/hjalmar-meza/
-NOTE:Especialista en IA aplicada y Gestión de Proyectos Telco.
-END:VCARD`;
+        // Número ensamblado en tiempo de ejecución — invisible para scrapers y bots
+        function generateAndDownloadVCard() {
+            // El número se fragmenta en trozos codificados en Base64, nunca se escribe en claro
+            const _p = [atob('KzM0'), atob('NjM0'), atob('NjU1NTIy')].join('');
+            const vcardData = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'FN:Hjalmar Meza Cortez',
+                'N:Meza Cortez;Hjalmar;;;',
+                'TITLE:L\u00edder de Operaciones & Transformaci\u00f3n Digital',
+                'ORG:Hjalmar Meza Consulting',
+                'TEL;TYPE=CELL,VOICE:' + _p,
+                'EMAIL;TYPE=INTERNET:hjalmar.meza@gmail.com',
+                'URL:https://www.linkedin.com/in/hjalmar-meza/',
+                'NOTE:Especialista en IA aplicada y Gesti\u00f3n de Proyectos Telco.',
+                'END:VCARD'
+            ].join('\n');
 
             const blob = new Blob([vcardData], { type: 'text/vcard' });
             const url = URL.createObjectURL(blob);
-            const newLink = document.createElement('a');
-            newLink.download = 'Hjalmar_Meza.vcf';
-            newLink.href = url;
-            newLink.click();
+            const link = document.createElement('a');
+            link.download = 'Hjalmar_Meza.vcf';
+            link.href = url;
+            link.click();
             URL.revokeObjectURL(url);
         }
     </script>
