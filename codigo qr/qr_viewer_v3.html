@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA DE IDENTIDAD DIGITAL | HJALMAR MEZA</title>
+    <!-- Icono para pantalla de inicio -->
+    <link rel="apple-touch-icon" href="../hjalmar_icon.png">
+    <link rel="icon" type="image/png" href="../hjalmar_icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Incluimos una fuente futurista de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --obsidian: #050507;
+            --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --slate: #1e293b;
+        }
+        
+        body {
+            background-color: var(--obsidian);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                var(--obsidian);
+        }
+
+        /* Contenedor Principal Animado */
+        .identity-hub {
+            position: relative;
+            width: 90%;
+            max-width: 450px;
+            padding: 2.5rem;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Escáner de Seguridad Animado */
+        .scan-line {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            box-shadow: 0 0 15px var(--gold);
+            animation: scanning 4s linear infinite;
+            z-index: 10;
+        }
+
+        @keyframes scanning {
+            0% { top: 10%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { top: 90%; opacity: 0; }
+        }
+
+        /* Marco del QR - Efecto Chip */
+        .qr-display-unit {
+            position: relative;
+            background: #000;
+            padding: 15px;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 1px solid #222;
+            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .qr-image {
+            display: block;
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            filter: contrast(1.1) brightness(1.1);
+        }
+
+        /* Información del Usuario */
+        .user-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+        }
+
+        .user-header p {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        /* Botones de Acción Interactivos */
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            color: var(--gold);
+        }
+
+        /* Decoración de Esquinas Tecnológicas */
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gold);
+            opacity: 0.4;
+        }
+        .tl { top: 15px; left: 15px; border-right: 0; border-bottom: 0; }
+        .tr { top: 15px; right: 15px; border-left: 0; border-bottom: 0; }
+        .bl { bottom: 15px; left: 15px; border-right: 0; border-top: 0; }
+        .br { bottom: 15px; right: 15px; border-left: 0; border-top: 0; }
+
+    </style>
+</head>
+<body>
+
+    <div class="identity-hub">
+        <div class="scan-line"></div>
+        
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <div class="user-header">
+            <h2>H J A L M A R   M E Z A</h2>
+            <p>Identidad Digital Validada</p>
+        </div>
+
+        <div class="qr-display-unit">
+            <img src="codigo_qr_hjalmar_final_PRO_V2.png" alt="QR Hjalmar Meza" class="qr-image">
+        </div>
+
+        <div class="action-grid">
+            <a href="#" class="action-btn" id="shareBtn">
+                <span>📁 COMPARTIR IDENTIDAD</span>
+            </a>
+            <a href="https://hjalmarmeza.github.io/cv/cv.html" class="action-btn">
+                <span>📄 VER CV WEB</span>
+            </a>
+        </div>
+
+        <p style="font-size: 0.7rem; color: #475569; margin-top: 2rem;">
+            Protocolo de Comunicación Encriptado v4.0
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('shareBtn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const shareData = {
+                title: 'Identidad Digital | Hjalmar Meza',
+                text: 'Hola, aquí tienes mi Identidad Digital profesional:',
+                url: 'https://hjalmarmeza.github.io/vcard/'
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    alert('Enlace copiado: ' + shareData.url);
+                }
+            } catch (err) {
+                console.log('Error compartiendo:', err);
+            }
+        });
+    </script>
+
+</body>
+</html>
