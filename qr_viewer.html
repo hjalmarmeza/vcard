@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code | Hjalmar Meza</title>
+    <style>
+        body {
+            background: #0a0a0b;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .qr-container {
+            padding: 2rem;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(245, 166, 35, 0.3);
+        }
+        h2 { margin-top: 2rem; color: #f5a623; letter-spacing: 2px; text-transform: uppercase; font-size: 1rem;}
+        p { color: #888; font-size: 0.8rem; margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="qr-container">
+        <!-- Usamos el API de goqr.me para generar tu QR dinámicamente -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://hjalmarmeza.github.io/vcard/vcard.html" alt="QR Hjalmar Meza">
+    </div>
+
+    <h2>Escanea para Guardar Contacto</h2>
+    <p>Apunta con la cámara de tu celular para probar el flujo completo.</p>
+
+</body>
+</html>
